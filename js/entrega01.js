@@ -1,13 +1,9 @@
-//Creo una clase productManager
+//Creo una clase ProductManager
 
-class productManager {
+class ProductManager {
     constructor() {
         this.products = [];
         this.currentId = 0;
-    }
-
-    newId() {
-        return this.currentId++;
     }
 
     addProduct(product) {
@@ -26,7 +22,7 @@ class productManager {
             }
 
             if (!Object.values(productNew).includes(undefined)) {
-                this.newId()
+                this.currentId++
                 this.products.push({ ...productNew, id: this.currentId })
             }else{
                 console.log(`El producto que estas intentando agregar "${product.title}" no contiene todos los valores, asegurate de completar todos los campos`);
@@ -64,7 +60,7 @@ const prod4 = { title: "Pepsi", description: "Pepsi de 500Ml para disfrutar", th
 
 
 // Se creará una instancia de la clase “ProductManager”
-const products = new productManager
+const products = new ProductManager
 
 // Se llamará “getProducts” recién creada la instancia, debe devolver un arreglo vacío []
 console.log(products.getProducts());
