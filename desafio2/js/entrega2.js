@@ -95,11 +95,13 @@ const prod4 = { title: "Pepsi", description: "Pepsi de 500Ml para disfrutar", th
 // Producto para actualizar otro // Contiene propiedades faltantes, por lo que esas propiedades-valor quedaran guardadas con los datos anteriormente cargados
 const prod6 = { title: "Coca Cola Zero Azucar", price: 900, stock: 40 }
 
-
-
+// Array de productos
+const arrProducts= [
+    prod1, prod2, prod3, prod4, prod5, prod6
+]
 
 // Se creará una instancia de la clase “ProductManager”.
-const products = new ProductManager("./desafio2/js/products.json");
+const products = new ProductManager(`${__dirname}/products.json`);
 
 // Se llamará “getProducts” recién creada la instancia, debe devolver un arreglo vacío [].
 console.log("Se llamará “getProducts” recién creada la instancia, debe devolver un arreglo vacío [].");
@@ -108,9 +110,9 @@ console.log(products.getProducts());
 // Se llamará al método “addProduct” con los campos: "title, description, price, thumnail, code, stock" (Campos correspondientes en los objetos anteriormente creados)
 // El objeto debe agregarse satisfactoriamente con un id generado automáticamente SIN REPETIRSE.
 console.log("Agrego objetos mediante el metodo addProduct con un id generado automáticamente SIN REPETIRSE.");
-products.addProduct(prod1);
-products.addProduct(prod2);
-products.addProduct(prod5);
+products.addProduct(arrProducts[0]);
+products.addProduct(arrProducts[1]);
+products.addProduct(arrProducts[4]);
 
 // Se llamará el método “getProducts” nuevamente, esta vez debe aparecer el producto recién agregado.
 console.log("Se llamará el método “getProducts” nuevamente, esta vez deben aparecer los productos recién agregados.");
@@ -123,7 +125,7 @@ products.getProductById(5); // No existe
 
 // Se llamará al método “updateProduct” y se intentará cambiar un campo de algún producto, se evaluará que no se elimine el id y que sí se haya hecho la actualización.
 console.log("Se llamará al método “updateProduct” y se intentará cambiar un campo de algún producto, se evaluará que no se elimine el id y que sí se haya hecho la actualización.");
-products.updateProduct(1, prod6);
+products.updateProduct(1, arrProducts[5]);
 console.log(products.getProductById(1));
 
 // Se llamará al método “deleteProduct”, se evaluará que realmente se elimine el producto o que arroje un error en caso de no existir.
@@ -134,5 +136,3 @@ products.deleteProduct(5); // No existe
 // Arreglo final
 console.log("Arreglo final");
 console.log(products.getProducts());
-
-
