@@ -23,12 +23,9 @@ products.addProduct(arrProducts[9]); */
 app.get("/products", async (req, res) => {
     try {
         const { limit } = req.query;
-        if (limit) {
-            let allProducts = await products.getProducts();
-            let limitProducts = allProducts.slice(0, limit);
-            res.send(limitProducts);
-        }
-        res.send(products.getProducts())
+        let allProducts = await products.getProducts();
+        let limitProducts = allProducts.slice(0, limit);
+        limit ? res.send(limitProducts) : res.send(allProducts)
     } catch (error) {
         console.log(error, "Server ERROR, no se pudieron obtener los productos.");
         return [];
@@ -38,7 +35,7 @@ app.get("/products", async (req, res) => {
 app.get("/products/:id", async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-        res.send(await products.getProductById(id));
+        products.getProductById(id) ? res.send(await products.getProductById(id)) : res.send(["El producto no existe"])
     } catch (error) {
         console.log(error, "Server ERROR, no se pudo obtener el producto.");
         return [];
