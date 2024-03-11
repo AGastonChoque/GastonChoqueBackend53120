@@ -3,7 +3,7 @@ import { productManager } from "../js/productManager.js"
 
 const productsRouter = Router();
 
-const products = new productManager("./desafio4PreEntrega1/SRC/FS/products.json")
+const products = new productManager("./SRC/FS/products.json")
 
 
 productsRouter.get("/", async (req, res) => {

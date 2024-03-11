@@ -3,7 +3,7 @@ import { cartManager } from "../js/cartManager.js"
 
 const cartsRouter = Router();
 
-const carts = new cartManager("./desafio4PreEntrega1/SRC/FS/carts.json")
+const carts = new cartManager("./SRC/FS/carts.json")
 
 
 cartsRouter.get("/", async (req, res) => {

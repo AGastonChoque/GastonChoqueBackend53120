@@ -178,13 +178,18 @@ Como vemos en este caso se selecciono el carrito 1 y se elimino el producto con 
 git clone https://github.com/AGastonChoque/GastonChoqueBackend53120
 ```
 
-- 2 Instalar las depencias mediante el npm
+- 2 Posicionarse en la carpeta del proyecto
+```
+cd .\desafio4PreEntrega1\  
+```
+
+- 3 Instalar las depencias mediante el npm
 
 ```
-npm install -y
+npm install
 ```
 
-- 3 Iniciar el servidor
+- 5 Iniciar el servidor
 
 ```
 nodemon start

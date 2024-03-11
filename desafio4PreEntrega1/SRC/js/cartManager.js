@@ -10,7 +10,7 @@ export class cartManager {
         this.currentId = this.carts.reduce((max, cart) => {
             return typeof cart.id === 'number' && cart.id > max ? cart.id : max;
         }, 0);
-        this.products = JSON.parse(this.fs.readFileSync("./desafio4PreEntrega1/SRC/FS/products.json"));
+        this.products = JSON.parse(this.fs.readFileSync("./SRC/FS/products.json"));
     }
 
 
