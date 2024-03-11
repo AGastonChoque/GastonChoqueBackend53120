@@ -192,5 +192,5 @@ npm install
 - 5 Iniciar el servidor
 
 ```
-nodemon start
+npm start
 ```
